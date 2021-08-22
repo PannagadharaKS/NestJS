@@ -41,7 +41,7 @@ export class UserController {
     }
 
     // FETCH USER IF VERIFIED
-    @Get("user")
+    @Get()
     async user(@Req() request: Request) {
         try {
             const cookie = request.cookies["jwt"];
