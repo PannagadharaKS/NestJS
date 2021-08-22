@@ -1,0 +1,31 @@
+AUTHENTICATION WITH JWT
+
+==================================== PACKAGES ============================================
+
+    - mysql2
+        - DB
+    - bcrypt
+        - PASSWORD HASHING FUNCTION
+    - cookie-parser
+        - MIDDLEWARE WHICH PARSES COOKIES ATTACHED TO THE CLIENT REQUEST OBJECT
+    - passport-jwt
+        - PASSPORT STRATEGY FOR AUTHENTICATING WITH A JSON WEB TOKEN
+    - typeorm
+        - ORM TO SCAFFOLD NEW APPS THAT CONNECT TO DATABASES
+
+================================= IMPLEMENTAION ==========================================
+
+    - bcrypt
+        - bcrypt.hash(<PASSWORD>, <SALTORROUNDS>)
+        - bcrypt.compare(<PASSWORD>, <CURRENT_PASSWORD_PARAMETER>)
+
+    - jwt
+        - jwtService.signAsync(<ID>)
+        - jwtService.verifyAsync(cookie)
+
+    - cookies
+        - response.cookie("jwt", jwt, {httpOnly: true})
+            - STORE JWT AS COOKIE IN HTTP
+        - const cookie = request.cookies["jwt"]
+        - response.clearCookie("jwt")
+            - CLEARS COOKIE
