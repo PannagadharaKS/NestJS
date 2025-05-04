@@ -1,0 +1,23 @@
+TYPEORM
+    - BRIDGE BETWEEN OBJECT CODE AND RELATIONAL DB
+    - SUPPORTS
+        - ACTIVE RECORD
+            - BASE ENTITY
+        - DATA MAPPERS
+            - REPOSITORIES
+                - INJECTREPOSITIORY(<ENTITY>)
+
+    - SYNCHRONIZE
+        - TRUE
+        - AUTO UPDATE ENTITES
+    - MIGRATIONS
+        - migrations: [
+            "dist/src/nest_e2/migrations/*.js"
+            ],
+        - cli: {
+                migrationsDir: "src/nest_e2/migrations"
+            }
+        - package.json
+            - "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+            - "migration:generate": "npm run build && npm run typeorm migration:generate -- -n",    // -n ---> -NAME
+            - "migration:run": "npm run build && npm run typeorm migration:run"
